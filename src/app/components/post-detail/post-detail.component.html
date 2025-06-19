@@ -1,0 +1,29 @@
+<div class="detail-conatiner">
+  <div class="btns">
+    <button (click)="goBack()">Back</button>
+  </div>
+
+  <div *ngIf="post" class="post-detail">
+    <h2>{{ post.title }}</h2>
+    <p>{{ post.body }}</p>
+
+    <h3>Comments ({{ comments.length }})</h3>
+    <ul class="comment-list">
+      <li *ngFor="let comment of comments">
+        <h4>{{ comment.name }}</h4>
+        <p>
+          <em>{{ comment.email }}</em>
+        </p>
+        <p>{{ comment.body }}</p>
+      </li>
+    </ul>
+  </div>
+
+      <div class="edit-and-delete">
+
+        <button (click)="editPost()">Edit Post</button>
+        <button (click)="deletePost()">Delete Post</button>
+
+    </div>
+    <p *ngIf="successMessage" class="success">{{ successMessage }}</p>
+</div>
