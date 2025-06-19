@@ -1,5 +1,18 @@
-@if (postsData) {
-    @for (post of postsData; track $index) {
-       <p>{{post.title}}</p>
-    }
-}
+<main class="post-cards">
+  @if (loading) {
+  <app-loading-modal [visible]="loading"></app-loading-modal>
+  }@else {
+    @for (Post of paginatedPosts; track $index) {
+  <app-post-card [post]="Post"></app-post-card>
+  } }
+
+  <div class="page-nav">
+    <app-pagination
+      [totalItems]="allPosts.length"
+      [currentPage]="currentPage"
+      [itemsPerPage]="postsPerPage"
+      (pageChange)="onPageChange($event)"
+    >
+    </app-pagination>
+  </div>
+</main>

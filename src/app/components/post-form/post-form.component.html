@@ -1,0 +1,29 @@
+<div class="form-container">
+    <button (click)="goBack()"> < Back</button>
+  <div class="create-post">
+    <h2>Create a New Post</h2>
+
+    <form (ngSubmit)="submitPost()" #postForm="ngForm">
+      <label for="title">Title</label>
+      <input
+        type="text"
+        id="title"
+        [(ngModel)]="post.title"
+        name="title"
+        required
+      />
+
+      <label for="body">Body</label>
+      <textarea
+        id="body"
+        [(ngModel)]="post.body"
+        name="body"
+        required
+      ></textarea>
+
+      <button type="submit" [disabled]="postForm.invalid">Submit Post</button>
+
+      <p class="success" *ngIf="successMessage">{{ successMessage }}</p>
+    </form>
+  </div>
+</div>
