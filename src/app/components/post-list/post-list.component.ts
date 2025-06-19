@@ -27,7 +27,7 @@ export class PostListComponent implements OnInit {
 
     this.loading = true;
 
-    this.apiClientService.getPosts().subscribe((posts) => {
+    this.apiClientService.posts$.subscribe((posts) => {
       this.allPosts = posts;
       this.loading = false;
       this.updatePaginatedPosts();
