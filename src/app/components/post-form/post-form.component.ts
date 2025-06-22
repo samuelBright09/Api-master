@@ -57,4 +57,5 @@ export class PostFormComponent implements OnInit {
   goBack() {
     this.router.navigateByUrl('');
   }
+  
 }
