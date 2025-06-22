@@ -1,6 +1,9 @@
 <header class="header">
   <h1>API POSTMASTER</h1>
-  <button (click)="navigateToCreatePost()">Add Post</button>
+  <div class="btns">
+    <app-button label="Login" />
+    <app-button (click)="navigateToCreatePost()" label="Add Post" />
+  </div>
 </header>
 <main>
   <router-outlet />

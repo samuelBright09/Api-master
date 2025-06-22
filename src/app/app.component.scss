@@ -6,21 +6,12 @@ header {
   padding: 1.5rem;
   @include flex-center-between;
 
-  button {
-    padding: 0.4rem 0.8rem;
-    border: none;
-    background-color: #007bff;
-    color: #fff;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background-color 0.3s ease;
-
-    &:hover {
-      background-color: #0056b3;
-    }
+  .btns {
+  @include flex-center-between;
+  gap: 1rem;
   }
 }
+
 
 
 main{
