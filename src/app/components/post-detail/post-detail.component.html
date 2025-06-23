@@ -1,6 +1,6 @@
 <div class="detail-conatiner">
   <div class="btns">
-    <button (click)="goBack()">Back</button>
+    <app-button bgColor="#63736a" label="Back" (click)="goBack()"></app-button>
   </div>
 
   <div *ngIf="post" class="post-detail">
@@ -21,8 +21,8 @@
 
       <div class="edit-and-delete">
 
-        <button (click)="editPost()">Edit Post</button>
-        <button (click)="deletePost()">Delete Post</button>
+        <app-button bgColor="green" label="Edit Post" (click)="editPost()"></app-button>
+        <app-button bgColor="red" label="Delete Post" (click)="deletePost()"></app-button>
 
     </div>
     <p *ngIf="successMessage" class="success">{{ successMessage }}</p>

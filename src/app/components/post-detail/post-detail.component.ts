@@ -5,10 +5,11 @@ import { ApiClientService } from '../../services/api-client.service';
 import { forkJoin, map, switchMap, tap } from 'rxjs';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { ButtonComponent } from "../button/button.component";
 
 @Component({
   selector: 'app-post-detail',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ButtonComponent],
   templateUrl: './post-detail.component.html',
   styleUrl: './post-detail.component.scss'
 })

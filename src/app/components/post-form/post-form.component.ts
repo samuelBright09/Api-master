@@ -4,10 +4,11 @@ import { FormsModule } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiClientService } from '../../services/api-client.service';
 import { Post } from '../../interfaces/post';
+import { ButtonComponent } from "../button/button.component";
 
 @Component({
   selector: 'app-create-post',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, ButtonComponent],
   templateUrl: './post-form.component.html',
   styleUrl: './post-form.component.scss',
 })
