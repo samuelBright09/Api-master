@@ -3,6 +3,7 @@ import { Router, RouterOutlet } from '@angular/router';
 
 import { FooterComponent } from "./components/footer/footer.component";
 import { ButtonComponent } from "./components/button/button.component";
+import { AuthService } from './services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -12,8 +13,15 @@ import { ButtonComponent } from "./components/button/button.component";
 })
 export class AppComponent {
  private router = inject(Router)
+ private authService = inject(AuthService)
 
  navigateToCreatePost() {
  this.router.navigateByUrl('create');
+ }
+
+
+ login(): void {
+ this.authService.login();
+ console.log(this.authService.getToken());
  }
 }
