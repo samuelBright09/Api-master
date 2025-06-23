@@ -1,4 +1,5 @@
 @use '../app/styles/mixins' as *;
+@use '../app/styles/breakpoints' as *;
 
 header {
   background-color: #000;
@@ -9,6 +10,11 @@ header {
   .btns {
   @include flex-center-between;
   gap: 1rem;
+
+  @media (max-width:$mobile){
+    @include flex-between-column;
+
+  }
   }
 }
 

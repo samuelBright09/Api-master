@@ -1,3 +1,6 @@
+    @use '../../styles/breakpoints' as *;
+    
+    
     button {
       padding: 0.4rem 0.8rem;
       border: none;
@@ -7,6 +10,11 @@
       cursor: pointer;
       font-size: 0.9rem;
       transition: background-color 0.3s ease;
+
+    @media (max-width: $mobile) {
+      text-wrap: nowrap;
+      font-size: 0.8rem;
+    }
 
       &:hover {
         background-color: #0056b3;
