@@ -18,7 +18,7 @@
         id="body"
         [(ngModel)]="post.body"
         name="body"
-        required
+        required minlength="15"
       ></textarea>
 
       <button type="submit" [disabled]="postForm.invalid">{{ isEditing ? 'Save Changes' : 'Submit Post' }}</button>

@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { inject, Injectable } from '@angular/core';
+import { inject, Injectable, OnInit } from '@angular/core';
 import {
   BehaviorSubject,
   catchError,
@@ -12,11 +12,12 @@ import {
 import { Comments, Post } from '../interfaces/post';
 import { ErrorHandlingService } from './error-handling.service';
 import { environment } from '../../environments/environment';
+import { AuthService } from './auth.service';
 
 @Injectable({
   providedIn: 'root',
 })
-export class ApiClientService {
+export class ApiClientService  {
   private BASE_URL = `${environment.apiUrl}`;
   private postSubject = new BehaviorSubject<Post[]>([]);
   public posts$ = this.postSubject.asObservable();
@@ -26,6 +27,7 @@ export class ApiClientService {
 
   private errorHandlingService = inject(ErrorHandlingService);
   private http = inject(HttpClient);
+  // private authService = inject(AuthService);
 
   constructor() {
     const cacheKey = 'posts';
@@ -52,6 +54,7 @@ export class ApiClientService {
   }
 
   fetchPosts(): void {
+    
     this.http
       .get<Post[]>(this.BASE_URL)
       .pipe(
