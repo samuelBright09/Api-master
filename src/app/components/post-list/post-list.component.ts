@@ -36,7 +36,7 @@ export class PostListComponent implements OnInit {
 
   updatePaginatedPosts(): void {
     const startIndex = (this.currentPage - 1) * this.postsPerPage;
-    const endIndex = startIndex + this.postsPerPage;
+    const endIndex = startIndex + this.postsPerPage; 
     this.paginatedPosts = this.allPosts.slice(startIndex, endIndex);
   }
 

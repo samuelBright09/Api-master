@@ -4,10 +4,11 @@ import { Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./components/footer/footer.component";
 import { ButtonComponent } from "./components/button/button.component";
 import { AuthService } from './services/auth.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, FooterComponent, ButtonComponent],
+  imports: [RouterOutlet, CommonModule, FooterComponent, ButtonComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
@@ -22,6 +23,17 @@ export class AppComponent {
 
  login(): void {
  this.authService.login();
- console.log(this.authService.getToken());
  }
+
+ logOut(): void {
+ this.authService.logOut();
+ } 
+ 
+ isLoggedIn(): boolean {
+  return this.authService.isAuthenticated();
+ }
+ 
+
+
+
 }
